@@ -6,7 +6,7 @@ import foto3 from '../images/fotos-options/foto3.png';
 import foto4 from '../images/fotos-options/foto4.png';
 import foto5 from '../images/fotos-options/foto5.png';
 import foto6 from '../images/fotos-options/foto6.png';
-import { GrFormNext, GrFormPrevious } from "react-icons/gr";
+import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 
 const photos = {
     'photo1':  foto1,
@@ -29,6 +29,7 @@ const Title = styled.div`
     font-size: 64px;
     line-height: 70px;
     text-align: start;
+  
 `
 const ImageContent = styled.div`
     img {
@@ -74,8 +75,8 @@ const NextButton = styled.button`
     opacity: 0.5;
     border-radius: 10px 0px 0px 10px;
     position: relative;
-    top: 50%;
-    right: 18.438rem;
+    top: 420px;
+    left: 1152px;
 `
 
 const PreviusButton = styled.button`
@@ -85,7 +86,12 @@ const PreviusButton = styled.button`
     opacity: 0.5;
     border-radius: 0px 10px 10px 0px;
     position: relative;
-    top: 50%;
+    top: 420px;
+    right: 90px;
+`
+const Icons = styled.div`
+    color: #ffffff;
+    transform: scale(3);
 `
 
 const PhotosGallery = () => {
@@ -154,10 +160,14 @@ const PhotosGallery = () => {
                 </Title>
                 <ImageContent>
                     <NextButton onClick={() => nextPhoto()}>
-                        <GrFormNext />
+                        <Icons>
+                            <MdNavigateNext />
+                        </Icons>
                     </NextButton>
-                    <PreviusButton onClick={() => previousPhoto()}>
-                        <GrFormPrevious />
+                    <PreviusButton onClick={() => previousPhoto()} >
+                        <Icons>
+                            <MdNavigateBefore />
+                        </Icons>
                     </PreviusButton>
                     <img src={mainPhoto} alt="foto" />
                 </ImageContent>

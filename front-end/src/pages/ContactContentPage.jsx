@@ -23,18 +23,27 @@ const Label = styled.label`
     font-weight: normal;
     font-size: 16px;
     line-height: 17px;
+    @media(max-width: 1700px) {
+        width: 90%;
+    }
 `
 const Input = styled.input`
     width: 607px;
     height: 46px;
     opacity: 40%;
     margin-bottom: 24px;
+    @media(max-width: 1700px) {
+        width: 90%;
+    }
 `
 const Textarea = styled.textarea`
     width: 607px;
     height: 146px;
     opacity: 40%;
     margin-bottom: 24px;
+    @media(max-width: 1700px) {
+        width: 90%;
+    }
 `
 const Button = styled.button`
     padding: 16px;
@@ -43,9 +52,11 @@ const Button = styled.button`
     background: #FFFFFF;
     border: 1px solid #FFFFFF;
     margin-bottom: 180px;
+    @media(max-width: 1700px) {
+        width: 90%;
+    }
 `
 const ContactContentPage = () => {
-
     return (
         <Content>
             <Contact>Contato</Contact>
@@ -60,7 +71,6 @@ const ContactContentPage = () => {
             <Button>Enviar</Button>
         </Content>
     )
-
 }
 
 export default ContactContentPage

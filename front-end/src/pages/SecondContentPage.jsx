@@ -6,14 +6,9 @@ const Content = styled.div`
     display: flex;
     width: 100%;
     height: 42.25rem;
-    @media(max-width: 106.25rem) {
+    @media(max-width: 1700px) {
         flex-direction: column;
     }
-    /* @media(max-width: 40.625rem) {
-        margin: 0;
-        flex-direction: column;
-        height: auto;
-    } */
 `
 
 
@@ -23,7 +18,7 @@ const DescriptionItens = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    @media(max-width: 106.25rem) {
+    @media(max-width: 1700px) {
         width: 100%;
     }
 `

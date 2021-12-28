@@ -10,6 +10,10 @@ const Content = styled.div`
     justify-content: space-between;
     align-items: center;
     height: 15rem;
+    @media(max-width: 1700px) {
+        padding:10px;
+        flex-direction: column;
+    }
 `
 const AdressContent = styled.div`
     font-style: normal;
@@ -24,10 +28,12 @@ const AdressContent = styled.div`
             margin-left: 15px;
         }
     }
+    @media(max-width: 1700px) {
+        margin: 0;
+    }
 `
 const SocialMediaContent = styled.div`
     display: inherit;
-    /* padding-right: 100px; */
 `
 const Icons = styled.div`
     margin-right: 15px;
