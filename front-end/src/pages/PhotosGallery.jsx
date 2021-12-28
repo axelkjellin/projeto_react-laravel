@@ -20,24 +20,37 @@ const photos = {
 const Content = styled.div`
     width: 100%;
     display: flex;
-    align-items:  center;
     flex-direction: column;
+    align-items:  center;
     margin-top: 140px;
+    @media(max-width: 1280px){
+        flex-direction: column;
+        margin-top: 0;
+    }
 `
 const Title = styled.div`
     font-weight: bold;
     font-size: 64px;
     line-height: 70px;
     text-align: start;
-  
+    @media(max-width: 1280px){
+        font-size: 36px;
+        line-height: 39px;
+        text-align: center;
+        margin-top: 25px;
+    }
 `
 const ImageContent = styled.div`
     img {
         width: 1240px;
         height: 700px;
     }
-    &.display{
-        display: none;
+    @media(max-width: 1280px){
+        img {
+            margin-top: 15px;
+            width: 100%;
+            height: 100%;
+        }
     }
 `
 const Container = styled.div`
@@ -48,6 +61,10 @@ const Container = styled.div`
         margin-top: 21px;
         justify-content: space-between;
         flex-direction: row;
+    }
+    @media(max-width: 1280px){
+        max-width: 100%;
+        max-height: 100%;
     }
 `
 const ImageOptions = styled.div`
@@ -62,21 +79,17 @@ const ImageOptionsFirstImage = styled.div`
         width: 224px;
         height: 126.47px;
     }
+    @media(max-width: 1280px){
+        display: none;
+    }
 `
 
 const Button = styled.button`
     margin: 0;
     padding: 0;
-`
-const NextButton = styled.button`
-    width: 88px;
-    height: 88px;
-    background: #090909;
-    opacity: 0.5;
-    border-radius: 10px 0px 0px 10px;
-    position: relative;
-    top: 420px;
-    left: 1152px;
+    @media(max-width: 1280px){
+        display: none;
+    }
 `
 
 const PreviusButton = styled.button`
@@ -86,12 +99,37 @@ const PreviusButton = styled.button`
     opacity: 0.5;
     border-radius: 0px 10px 10px 0px;
     position: relative;
-    top: 420px;
-    right: 90px;
+    bottom: 390px;
+    .previousButton{
+        color: #ffffff;
+        transform: scale(3);
+    }
+    @media(max-width: 1280px){
+        width: 50%;
+        position: static;
+        height: 55px;
+    }
 `
-const Icons = styled.div`
+
+const NextButton = styled.button`
+    width: 88px;
+    height: 88px;
+    background: #090909;
+    opacity: 0.5;
+    border-radius: 10px 0px 0px 10px;
+    position: relative;
+    bottom: 390px;
+    left: 86%;
     color: #ffffff;
-    transform: scale(3);
+    .nextButton {
+        color: #ffffff;
+        transform: scale(3);
+    }
+    @media(max-width: 1280px){
+        position: static;
+        width: 50%;
+        height: 55px;
+    }
 `
 
 const PhotosGallery = () => {
@@ -159,17 +197,13 @@ const PhotosGallery = () => {
                     Galeria de fotos
                 </Title>
                 <ImageContent>
-                    <NextButton onClick={() => nextPhoto()}>
-                        <Icons>
-                            <MdNavigateNext />
-                        </Icons>
-                    </NextButton>
-                    <PreviusButton onClick={() => previousPhoto()} >
-                        <Icons>
-                            <MdNavigateBefore />
-                        </Icons>
-                    </PreviusButton>
                     <img src={mainPhoto} alt="foto" />
+                    <PreviusButton onClick={() => previousPhoto()} >
+                        <MdNavigateBefore className="previousButton"/>
+                    </PreviusButton>
+                    <NextButton onClick={() => nextPhoto()}>
+                        <MdNavigateNext className="nextButton"/>
+                    </NextButton>
                 </ImageContent>
             </Container>
             <Container className="options">

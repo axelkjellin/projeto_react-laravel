@@ -10,7 +10,7 @@ const Content = styled.div`
     justify-content: space-between;
     align-items: center;
     height: 15rem;
-    @media(max-width: 1700px) {
+    @media(max-width: 1250px) {
         padding:10px;
         flex-direction: column;
     }
@@ -28,7 +28,7 @@ const AdressContent = styled.div`
             margin-left: 15px;
         }
     }
-    @media(max-width: 1700px) {
+    @media(max-width: 1250px) {
         margin: 0;
     }
 `
