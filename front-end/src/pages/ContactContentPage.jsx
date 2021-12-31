@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Component} from "react";
 import styled from "styled-components";
+import httpClient from 'react-http-client';
 
 const Content = styled.div`
     margin-top: 170px;
@@ -62,21 +63,52 @@ const Button = styled.button`
 
     }
 `
-const ContactContentPage = () => {
-    return (
-        <Content>
-            <Contact>Contato</Contact>
-            <Label>Nome</Label>
-            <Input></Input>
-            <Label>Telefone</Label>
-            <Input></Input>
-            <Label>E-mail</Label>
-            <Input></Input>
-            <Label>Mensagem</Label>
-            <Textarea></Textarea>
-            <Button>Enviar</Button>
-        </Content>
-    )
+
+const baseUrl = 'http://localhost:80/api/contact'
+
+const initialState = {
+    contact: {
+        name: '',
+        phone: '',
+        email: '',
+        message: ''
+    }
 }
 
-export default ContactContentPage
+export default class ContactContentPage extends Component {
+    state = {...initialState}
+
+    handleChange(event) {
+        const contact = { ...this.state.contact}
+        contact[event.target.name] = event.target.value
+        this.setState({contact})
+    }
+
+    async sendContact() {
+        const contact = this.state.contact
+        await httpClient.post(
+            baseUrl,
+            contact
+            // headers if any
+        ).then(resp => {
+            // console.log(resp.data)
+        })
+    }
+
+    render() {
+        return (
+            <Content>
+                <Contact>Contato</Contact>
+                <Label>Nome</Label>
+                <Input type="text" name="name" value={this.state.contact.name} onChange={e => this.handleChange(e)} ></Input>
+                <Label>Telefone</Label>
+                <Input type="text" name="phone" value={this.state.contact.phone} onChange={e => this.handleChange(e)}></Input>
+                <Label>E-mail</Label>
+                <Input type="text" name="email" value={this.state.contact.email} onChange={e => this.handleChange(e)}></Input>
+                <Label>Mensagem</Label>
+                <Textarea type="text" name="message" value={this.state.contact.message} onChange={e => this.handleChange(e)}></Textarea>
+                <Button type="submit" onClick={e => this.sendContact(e)}>Enviar</Button>
+            </Content>
+        )
+    }
+}
