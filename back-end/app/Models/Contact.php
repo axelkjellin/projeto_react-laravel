@@ -30,9 +30,12 @@ class Contact extends Model
      */
     public $timestamps = true;
 
-    private $name;
-    private $email;
-    private $phone;
-    private $message;
+    protected $guarded = [];
 
+    protected $fillable = [
+        'name',
+        'email',
+        'phone',
+        'message'
+    ];
 }
