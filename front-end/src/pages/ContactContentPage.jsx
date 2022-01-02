@@ -1,6 +1,6 @@
 import React, { Component} from "react";
 import styled from "styled-components";
-import httpClient from 'react-http-client';
+import axios from "axios";
 
 const Content = styled.div`
     margin-top: 170px;
@@ -60,7 +60,6 @@ const Button = styled.button`
     @media(max-width: 1400px) {
         width: 90%;
         margin-bottom: 25px;
-
     }
 `
 
@@ -86,13 +85,11 @@ export default class ContactContentPage extends Component {
 
     async sendContact() {
         const contact = this.state.contact
-        await httpClient.post(
-            baseUrl,
+        await axios.post(baseUrl, {
             contact
-            // headers if any
-        ).then(resp => {
-            // console.log(resp.data)
-        })
+        }).then(resp => {
+            console.log(resp.data)
+        });
     }
 
     render() {
