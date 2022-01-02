@@ -13,7 +13,7 @@ class StoreContactRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class StoreContactRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'contact.name' => 'required',
+            'contact.email' => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'contact.name.required' => 'O campo nome é obrigatório',
+            'contact.email.required' => 'O campo e-mail é obrigatório'
         ];
     }
 }
