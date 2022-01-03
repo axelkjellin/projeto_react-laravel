@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import Top from "../pages/Top"
-import HeaderCarousel from "../pages/HeaderCarousel"
-import FirstContentPage from "../pages/FirstContentPage";
-import SecondContentPage from "../pages/SecondContentPage";
-import ThirdContentPage from '../pages/ThirdContentPage';
-import PhotosGallery from '../pages/PhotosGallery';
-import ContactContentPage from '../pages/ContactContentPage'
-import Footer from '../pages/Footer'
+import Top from "./pages/Top"
+import HeaderCarousel from "./pages/HeaderCarousel"
+import FirstContentPage from "./pages/FirstContentPage";
+import SecondContentPage from "./pages/SecondContentPage";
+import ThirdContentPage from './pages/ThirdContentPage';
+import PhotosGallery from './pages/PhotosGallery';
+import ContactContentPage from './pages/ContactContentPage'
+import Footer from './pages/Footer'
 
 const Main = styled.div`
     display: flex;
