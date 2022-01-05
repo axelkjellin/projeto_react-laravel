@@ -42,14 +42,41 @@ distro linux:
 
             Pronto, seu banco ja deve conter as devidas tabelas relacionadas a aplicação e esta pronta para ser utiliza
 
+windowns:
+    ferramentas necessarias instaladas:
+    - mysql
+    - php 8.0
+    - composer
+    - npm
+    - node
+    
+    front-end:
+        1. para rodar a aplicação acesse a pasta raiz do projeto pelo terminal e rode o seguinte comando:
+            -> npm instal
+        depois rode
+            -> npm start
+        
+        esse comando irá criar a aplicação e você ira acessar pelo link http://localhost:3000/ no seu navegador de preferencia.
+
+    back-end :
+        1. para rodar a aplicação acesse a pasta raiz do projeto pelo terminal e rode os seguintes comandos:
+            -> composer install
+            -> php artisan migrate
+            -> php artisan serve
+
+        dessa forma você ja podera acessar a aplicação pelo http://localhost:80;
+        ela servira de API para sua aplicação front-end 
+
+Outras informações:
+
     Horas trabalhadas:
-        25/12/2021 - 6 horas terminado todo layout basico do front-end
+        25/12/2021 - 5 horas terminado todo layout basico do front-end
         28/12/2021 - 3 horas terminado a responsividade do site
         31/12/2021 - 30 minutos ajuste permissoes de pastas (dificuldade encontrada)
         31/12/2021 - 2 horas criado formulario para envio de contato do cliente
-        02/01/2022 - 7 horas criado toda aplicação back-end com o email ja funcionando model criada, 
+        02/01/2022 - 4 horas criado toda aplicação back-end com o email ja funcionando model criada, 
                     salvando dados do contato, recebendo e validando informação do contato, criado repository e interface.
-        03/01/2022 - tentativa de colocar um loader no botão de envio de formulario, implementação de campos nao validos e finalização da aplicação.
+        03/01/2022 - 2 horas tentativa de colocar um loader no botão de envio de formulario, implementação da validação dos campos e finalização da aplicação.
 
     Considerações finais:
         Foi muito interessante criar esse projeto, simples mas que botaram meus conhecimentos em prova, react com certeza é uma ferramenta muito interessante onde quero
@@ -58,6 +85,8 @@ distro linux:
 
         Dificuldade: 
             criar o formulario no react usando o useState()
+            criação do ambiente docker com o live-reload pelo container
+            
         Facilidades:
             styled-components,
             laravel,
